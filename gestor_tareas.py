@@ -39,15 +39,18 @@ def completar_tarea(id_tarea):
 def filtrar_tareas_completadas(completadas=True):
     filtradas = [tarea for tarea in tareas if tarea["completada"] == completadas]
     if filtradas:
+        print("LAS TAREAS QUE HAS COMPLETADO SON:")
         for tarea in filtradas:
-            print(f"Tarea {tarea['id']}: {tarea['descripcion']}, completada: {tarea['completada']}")
+            print(f"Tarea {tarea['id']}: {tarea['descripcion']}")
     else:
         print(f"No hay tareas {'completadas' if completadas else 'pendientes'}.\n")
 
 # Ordenar tareas por prioridad usando función lambda
 def ordenar_por_prioridad():
     tareas.sort(key=lambda tarea: tarea["prioridad"])
-    print("Tareas ordenadas por prioridad.\n")
+    print("Se acaban de ordenar las tareas por prioridad.\n")
+    print("Seleccione la opción 2 para volver a mostrar todas las tareas.\n")
+
 
 # Menú principal del gestor de tareas
 def menu():
